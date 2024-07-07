@@ -9,6 +9,7 @@ public interface Iemployee {
 
     String removeEmployee(String fullname);
 
+    Collection<Employee> findAll();
 
 
     Employee findThis(String fullName);

@@ -6,8 +6,8 @@ import ru.skypro.SpringMockito.exceptions.EmployeeAlreadyAddedException;
 import ru.skypro.SpringMockito.exceptions.EmployeeNotFoundException;
 import ru.skypro.SpringMockito.exceptions.EmployeeStorageIsFullException;
 
-
-
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -39,6 +39,10 @@ public class EmployeeImpl implements Iemployee {
         }
     }
 
+    @Override
+    public Collection<Employee> findAll() {
+        return Collections.unmodifiableCollection(employees.values());
+    }
 
     @Override
     public Employee findThis(String fullName) {
